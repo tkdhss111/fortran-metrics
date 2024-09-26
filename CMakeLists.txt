@@ -1,0 +1,6 @@
+cmake_minimum_required ( VERSION 3.5 )
+set ( CMAKE_Fortran_COMPILER gfortran )
+enable_language ( Fortran )
+enable_testing ()
+project ( fortran-metrics LANGUAGES Fortran VERSION 1.0.0 )
+add_subdirectory ( tests )
