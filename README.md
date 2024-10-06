@@ -7,5 +7,5 @@
     real    :: APE  ! (Scalar) Absolute Percentage Error
     real    :: MBE  ! Mean Bias Error
     real    :: MAE  ! Mean Absolute Error
-    real    :: MAPE ! Mean Percentage Absolute Error
+    real    :: MAPE ! Mean Absolute Percentage Error
     real    :: RMSE ! Root Mean Squared Error
