@@ -11,7 +11,7 @@ module metrics_mo
     real    :: MBE  ! Mean Bias Error
     real    :: MAE  ! Mean Absolute Error
     real    :: MAPE ! Mean Absolute Percentage Error
-    real    :: RMSE ! Root Mean Squared Error
+    real    :: RMSE ! Root Mean Squared Errors
     character(500) :: msg ! Summary message
   contains
     generic   :: calc => calc_metrics_scalar, calc_metrics_vector
