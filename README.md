@@ -1,4 +1,11 @@
-# Metrics Functions
+# fortran-metrics
+
+A Simple Forecasting Metrics Caluculator
+
+- Auto skip N/A data
+- Accepts both scalar or vector data
+
+[List of Metrics]
 
     integer :: N    ! Sample size
     real    :: E    ! (Scalar) Error
