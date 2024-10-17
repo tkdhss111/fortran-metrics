@@ -1,0 +1,12 @@
+{
+	"modules" : 
+	{
+		"metrics_mo.mod" : 
+		{
+			"bmi" : "/home/hss/0_tkd/1_hss/2_tools/fortran-metrics/build/test/metrics_mo.mod",
+			"is-private" : false
+		}
+	},
+	"references" : {},
+	"usages" : {}
+}
