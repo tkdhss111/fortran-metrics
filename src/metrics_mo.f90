@@ -1,5 +1,7 @@
 module metrics_mo
-
+  use, intrinsic :: iso_fortran_env, only : stdin  => input_unit,  &
+                                            stdout => output_unit, &
+                                            stderr => error_unit
   implicit none
 
   private
@@ -35,7 +37,7 @@ contains
     real              :: e
     this%is_scalar = .true.
     if ( is_eq( yhat, NA ) ) then
-      print '(a)', '*** Warning: yhat is NA.'
+      write ( stderr, '(a$)' ) '*** Warning: yhat is NA. '
       this%N   = iNA
       this%E   = NA 
       this%PE  = NA 
@@ -62,7 +64,7 @@ contains
     this%is_scalar = .false.
     is_na = is_eq( yhat, NA )
     if ( all( is_na ) ) then
-      print '(a)', '*** Warning: All yhats are NAs'
+      write ( stderr, '(a$)' ) '*** Warning: All yhats are NAs. '
       this%N    = iNA
       this%MBE  = NA 
       this%MAE  = NA 
@@ -82,7 +84,7 @@ contains
   end subroutine
 
   subroutine print_metrics ( this )
-    class(metrics_ty), intent(inout) :: this
+    class(metrics_ty), intent(in) :: this
     if ( this%is_scalar ) then
       print '( a, i3, 4(a, f5.2) )', &
       'N:',     this%N,  &
