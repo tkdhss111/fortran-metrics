@@ -36,7 +36,7 @@ contains
     real,  intent(in) :: y
     real              :: e
     this%is_scalar = .true.
-    if ( is_eq( yhat, NA ) ) then
+    if ( is_eq ( yhat, NA ) ) then
       write ( stderr, '(a$)' ) '*** Warning: yhat is NA. '
       this%N   = iNA
       this%E   = NA 
@@ -62,9 +62,9 @@ contains
     real, allocatable :: e(:)
     logical           :: is_na(size(yhat))
     this%is_scalar = .false.
-    is_na = is_eq( yhat, NA )
+    is_na = is_eq ( yhat, NA )
     if ( all( is_na ) ) then
-      write ( stderr, '(a$)' ) '*** Warning: All yhats are NAs. '
+      !write ( stderr, '(a)' ) '*** Warning: All yhats are NAs.'
       this%N    = iNA
       this%MBE  = NA 
       this%MAE  = NA 

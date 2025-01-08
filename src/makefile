@@ -1,5 +1,7 @@
+MKFILE:=-C .. -f makefile
+
 test:
-	make test -C ..
+	make test $(MKFILE)
 
 clean:
-	make clean -C ..
+	make clean $(MKFILE)
