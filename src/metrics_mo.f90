@@ -93,12 +93,12 @@ contains
       ', PE:',  this%PE, &
       ', APE:', this%APE
     else
-      print '( a, i0, 4(a, f5.2) )', &
+      print '( a, i0, 3(a, f5.2), (a, SP, f5.2) )', &
       'N:',      this%N   , &
-      ', RMSE:', this%RMSE, &
+      ', MAPE:', this%MAPE, &
       ', MAE:',  this%MAE , &
-      ', MBE:',  this%MBE , &
-      ', MAPE:', this%MAPE
+      ', RMSE:', this%RMSE, &
+      ', MBE:',  this%MBE
     end if
   end subroutine
 
