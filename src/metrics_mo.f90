@@ -86,14 +86,14 @@ contains
   subroutine print_metrics ( this )
     class(metrics_ty), intent(in) :: this
     if ( this%is_scalar ) then
-      print '( a, i3, 4(a, f5.2) )', &
+      print '( a, i0, 4(a, f5.2) )', &
       'N:',     this%N,  &
       ', E:',   this%E,  &
       ', AE:',  this%AE, &
       ', PE:',  this%PE, &
       ', APE:', this%APE
     else
-      print '( a, i3, 4(a, f5.2) )', &
+      print '( a, i0, 4(a, f5.2) )', &
       'N:',      this%N   , &
       ', RMSE:', this%RMSE, &
       ', MAE:',  this%MAE , &
