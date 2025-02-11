@@ -1,6 +1,6 @@
 # fortran-metrics
 
-A Simple Forecasting Metrics Caluculator
+A Simple Forecasting Metrics Calculator
 
 - Auto skip N/A data
 - Accepts both scalar or vector data
