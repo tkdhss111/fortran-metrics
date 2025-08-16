@@ -7,3 +7,8 @@ test:
 
 clean:
 	rm -r build
+
+git: clean
+	git add . && \
+	git commit -m "$(shell hostname)" && \
+	git push

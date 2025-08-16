@@ -36,13 +36,13 @@ contains
     real,  intent(in) :: y
     real              :: e
     this%is_scalar = .true.
-    if ( is_eq ( yhat, NA ) ) then
-      write ( stderr, '(a$)' ) '*** Warning: yhat is NA. '
+    if ( is_eq( y, NA ) .or. is_eq( yhat, NA ) ) then
+      write ( stderr, '(a$)' ) '*** Warning: Either y or yhat is NA. '
       this%N   = iNA
-      this%E   = NA 
-      this%PE  = NA 
-      this%AE  = NA 
-      this%APE = NA 
+      this%E   = NA
+      this%PE  = NA
+      this%AE  = NA
+      this%APE = NA
       return
     end if
     e = yhat - y
@@ -62,17 +62,17 @@ contains
     real, allocatable :: e(:)
     logical           :: is_na(size(yhat))
     this%is_scalar = .false.
-    is_na = is_eq ( yhat, NA )
+    is_na = is_eq( y, NA ) .or. is_eq( yhat, NA )
     if ( all( is_na ) ) then
       !write ( stderr, '(a)' ) '*** Warning: All yhats are NAs.'
       this%N    = iNA
-      this%MBE  = NA 
-      this%MAE  = NA 
-      this%MAPE = NA 
-      this%RMSE = NA 
+      this%MBE  = NA
+      this%MAE  = NA
+      this%MAPE = NA
+      this%RMSE = NA
       return
     end if
-    allocate ( y_(count(is_na) ) )
+    allocate ( y_(count( is_na )) )
     yhat_ = pack( yhat, .not. is_na )
     y_    = pack( y,    .not. is_na )
     e = yhat_ - y_
@@ -105,7 +105,7 @@ contains
   elemental pure logical function is_eq ( x, ref )
     real, intent(in) :: x
     real, intent(in) :: ref
-    is_eq = abs(x - ref) < epsilon(ref)
+    is_eq = abs( x - ref ) < epsilon( ref )
   end function
 
 end module
