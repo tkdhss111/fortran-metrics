@@ -64,7 +64,7 @@ contains
     this%is_scalar = .false.
     is_na = is_eq( y, NA ) .or. is_eq( yhat, NA )
     if ( all( is_na ) ) then
-      !write ( stderr, '(a)' ) '*** Warning: All yhats are NAs.'
+      !write ( stderr, '(a)' ) "*** Warning: Either y or yhat is NA vector."
       this%N    = iNA
       this%MBE  = NA
       this%MAE  = NA
