@@ -37,7 +37,7 @@ contains
     real              :: e
     this%is_scalar = .true.
     if ( is_eq( y, NA ) .or. is_eq( yhat, NA ) ) then
-      write ( stderr, '(a$)' ) '*** Warning: Either y or yhat is NA. '
+      write ( stderr, '(a$)' ) '[metrics_mo.f90:calc_metrics_scalar:40] *** Warning: Either y or yhat is NA. '
       this%N   = iNA
       this%E   = NA
       this%PE  = NA
